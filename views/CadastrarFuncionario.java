@@ -1,14 +1,12 @@
 package views;
 
-import java.util.Scanner;
-
 import controllers.FuncionarioController;
 import models.Funcionario;
+import utils.Console;
 
 public class CadastrarFuncionario {
 
     private static Funcionario funcionario;
-	private static Scanner ler = new Scanner(System.in);
 
 
 	public static void renderizar() {
@@ -17,23 +15,23 @@ public class CadastrarFuncionario {
 		    funcionario = new Funcionario();
 
             System.out.println("ID: ");
-			funcionario.setIdFuncionario(ler.next());
+			funcionario.setIdFuncionario(Console.readString());
 
 			System.out.println("CPF: ");
-			funcionario.setCpf(ler.next());
+			funcionario.setCpf(Console.readString());
 
             if (FuncionarioController.cadastrarFunc(funcionario)) {
 
 				System.out.println("Nome: ");
-				funcionario.setNome(ler.next());
+				funcionario.setNome(Console.readString());
 				System.out.println("Cargo: ");
-				funcionario.setCargo(ler.next());
+				funcionario.setCargo(Console.readString());
                 System.out.println("Data de cadastro: ");
-				funcionario.setDataCad(ler.next());
+				funcionario.setDataCad(Console.readString());
 				System.out.println("Cidade: ");
-				funcionario.setCidade(ler.next());
+				funcionario.setCidade(Console.readString());
                 System.out.println("Estado: ");
-				funcionario.setEstado(ler.next());
+				funcionario.setEstado(Console.readString());
 				System.out.println("\nFUNCIONARIO cadastrado com sucesso");
 
 			} else {

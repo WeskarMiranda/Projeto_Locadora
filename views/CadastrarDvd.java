@@ -1,14 +1,12 @@
 package views;
 
-import java.util.Scanner;
-
 import controllers.DvdController;
 import models.Dvd;
+import utils.Console;
 
 public class CadastrarDvd {
     
     private static Dvd dvd;
-    private static Scanner ler = new Scanner(System.in);
 
     public static void renderizar() {
 		
@@ -16,26 +14,26 @@ public class CadastrarDvd {
             dvd = new Dvd();
 
             System.out.println("ID: ");
-			dvd.setIdDvd(ler.next());
+			dvd.setIdDvd(Console.readString());
 
             if (DvdController.cadastrarDvd(dvd)) {
 
 				System.out.println("Nome: ");
-				dvd.setNome(ler.next());
+				dvd.setNome(Console.readString());
 				System.out.println("Ano de lançamento: ");
-				dvd.setAno(ler.next());
+				dvd.setAno(Console.readString());
 				System.out.println("Categoria: ");
-				dvd.setCategoria(ler.next());
+				dvd.setCategoria(Console.readString());
                 System.out.println("Preço: ");
-				dvd.setPreco(ler.nextDouble());
+				dvd.setPreco(Console.readDouble());
                 System.out.println("Duração: ");
-				dvd.setDuracao(ler.next());
+				dvd.setDuracao(Console.readString());
                 System.out.println("Estoque: ");
-				dvd.setEstoque(ler.nextInt());
+				dvd.setEstoque(Console.readInt());
 				System.out.println("\nDVD cadastrado com sucesso");
                 
 			} else {
-				System.out.println("Um DVD com o mesmo ID ja existe!");
+				System.out.println("\nUm DVD com o mesmo ID ja existe!");
 			}
 		
 		}

@@ -1,15 +1,12 @@
 package views;
 
-import java.util.Scanner;
-
 import controllers.ClienteController;
 import models.Cliente;
+import utils.Console;
 
 public class CadastrarCliente {
 
 	private static Cliente cliente;
-	private static Scanner ler = new Scanner(System.in);
-
 
 	public static void renderizar() {
 		
@@ -17,25 +14,25 @@ public class CadastrarCliente {
 		    cliente = new Cliente();
 
             System.out.println("ID: ");
-			cliente.setIdCliente(ler.next());
+			cliente.setIdCliente(Console.readString());
 
 			System.out.println("Cpf: ");
-			cliente.setCpf(ler.next());
+			cliente.setCpf(Console.readString());
 
             if (ClienteController.cadastrarCli(cliente)) {
 
 				System.out.println("Nome: ");
-				cliente.setNome(ler.next());
+				cliente.setNome(Console.readString());
 				System.out.println("Data de cadastro: ");
-				cliente.setDataCad(ler.next());
+				cliente.setDataCad(Console.readString());
 				System.out.println("Cidade: ");
-				cliente.setCidade(ler.next());
+				cliente.setCidade(Console.readString());
                 System.out.println("Estado: ");
-				cliente.setEstado(ler.next());
+				cliente.setEstado(Console.readString());
 				System.out.println("\nCLIENTE cadastrado com sucesso");
 
 			} else {
-				System.out.println("Um CLIENTE com o mesmo CPF ou ID ja existe!");
+				System.out.println("\nUm CLIENTE com o mesmo CPF ou ID ja existe!");
 			}
 		
 		}
