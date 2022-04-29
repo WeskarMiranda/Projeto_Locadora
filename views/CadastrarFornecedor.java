@@ -13,24 +13,17 @@ public class CadastrarFornecedor {
 		System.out.println("\n **** CADASTRO DE FORNECEDOR **** \n");
             fornecedor = new Fornecedor();
 
-            System.out.println("ID: ");
-			fornecedor.setIdFornecedor(Console.readString());
+			fornecedor.setIdFornecedor(Console.readString("ID: "));
 
-			System.out.println("CNPJ: ");
-			fornecedor.setCnpj(Console.readString());
+			fornecedor.setCnpj(Console.readString("CNPJ: "));
 
             if (FornecedorController.cadastrarForn(fornecedor)) {
 
-				System.out.println("Nome: ");
-				fornecedor.setNome(Console.readString());
-				System.out.println("Telefone: ");
-				fornecedor.setTelefone(Console.readString());
-				System.out.println("Cidade: ");
-				fornecedor.setCidade(Console.readString());
-                System.out.println("Estado: ");
-				fornecedor.setEstado(Console.readString());
-                System.out.println("País: ");
-				fornecedor.setPais(Console.readString());
+				fornecedor.setNome(Console.readString("Nome: "));
+				fornecedor.setTelefone(Console.readString("Telefone: "));
+				fornecedor.setCidade(Console.readString("Cidade: "));
+				fornecedor.setEstado(Console.readString("Estado: "));
+				fornecedor.setPais(Console.readString("País: "));
 				System.out.println("\nFORNECEDOR cadastrado com sucesso");
                 
 			} else {

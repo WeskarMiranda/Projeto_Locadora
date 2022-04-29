@@ -22,8 +22,8 @@ public class Main {
 		System.out.println("8 - Listar funcionarios");
 		System.out.println("9 - Cadastrar locacao");
 		System.out.println("10 - Listar locacoes");
-		System.out.println("11 - Editar locacao");
-		System.out.println("12 - Retornar locacao\n");
+		System.out.println("11 - Verificar quais DVDs estao fora de estoque");
+		System.out.println("12 - Verificar clientes com multas\n");
 		opcao = ErroTipo.lerNum("Digite a opcao a ser executada: ");
 		return opcao;
 	}
@@ -54,13 +54,14 @@ public class Main {
 			
 			case 8: ListarFuncionario.renderizar(); break;
 			
-//			case 9: CadastrarLocacao.renderizar(); break;
+			case 9: CadastrarLocacao.renderizar(); break;
 			
-//			case 10: ListarLocacao.renderizar(); break;
+			case 10: ListarLocacao listarLocacao = new ListarLocacao();
+			listarLocacao.renderizar(); break;
 			
-//			case 11: EditarLocacao.renderizar(); break;
+			case 11: EstoqueDvd.renderizar(); break;
 			
-//			case 12: RetornarLocacao.renderizar(); break;
+			case 12: Multas.renderizar(); break;
 			
 				
 			default:

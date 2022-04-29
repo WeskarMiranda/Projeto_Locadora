@@ -14,24 +14,17 @@ public class CadastrarFuncionario {
 		System.out.println("\n **** CADASTRO DE FUNCIONARIO **** \n");
 		    funcionario = new Funcionario();
 
-            System.out.println("ID: ");
-			funcionario.setIdFuncionario(Console.readString());
+			funcionario.setIdFuncionario(Console.readString("ID: "));
 
-			System.out.println("CPF: ");
-			funcionario.setCpf(Console.readString());
+			funcionario.setCpf(Console.readString("CPF: "));
 
             if (FuncionarioController.cadastrarFunc(funcionario)) {
 
-				System.out.println("Nome: ");
-				funcionario.setNome(Console.readString());
-				System.out.println("Cargo: ");
-				funcionario.setCargo(Console.readString());
-                System.out.println("Data de cadastro: ");
-				funcionario.setDataCad(Console.readString());
-				System.out.println("Cidade: ");
-				funcionario.setCidade(Console.readString());
-                System.out.println("Estado: ");
-				funcionario.setEstado(Console.readString());
+				funcionario.setNome(Console.readString("Nome: "));
+				funcionario.setCargo(Console.readString("Cargo: "));
+				funcionario.setDataCad(Console.readString("Data de cadastro: "));
+				funcionario.setCidade(Console.readString("Cidade: "));
+				funcionario.setEstado(Console.readString("Estado: "));
 				System.out.println("\nFUNCIONARIO cadastrado com sucesso");
 
 			} else {

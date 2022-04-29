@@ -13,23 +13,16 @@ public class CadastrarDvd {
 		System.out.println("\n **** CADASTRO DE DVD **** \n");
             dvd = new Dvd();
 
-            System.out.println("ID: ");
-			dvd.setIdDvd(Console.readString());
+			dvd.setIdDvd(Console.readString("ID: "));
 
             if (DvdController.cadastrarDvd(dvd)) {
 
-				System.out.println("Nome: ");
-				dvd.setNome(Console.readString());
-				System.out.println("Ano de lançamento: ");
-				dvd.setAno(Console.readString());
-				System.out.println("Categoria: ");
-				dvd.setCategoria(Console.readString());
-                System.out.println("Preço: ");
-				dvd.setPreco(Console.readDouble());
-                System.out.println("Duração: ");
-				dvd.setDuracao(Console.readString());
-                System.out.println("Estoque: ");
-				dvd.setEstoque(Console.readInt());
+				dvd.setNome(Console.readString("Nome: "));
+				dvd.setAno(Console.readString("Ano de lançamento: "));
+				dvd.setCategoria(Console.readString("Categoria: "));
+				dvd.setPreco(Console.readDouble("Preço: "));
+				dvd.setDuracao(Console.readString("Duração: "));
+				dvd.setEstoque(Console.readInt("Estoque: "));
 				System.out.println("\nDVD cadastrado com sucesso");
                 
 			} else {

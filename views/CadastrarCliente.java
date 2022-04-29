@@ -13,22 +13,16 @@ public class CadastrarCliente {
 		System.out.println("\n **** CADASTRO DE CLIENTE **** \n");
 		    cliente = new Cliente();
 
-            System.out.println("ID: ");
-			cliente.setIdCliente(Console.readString());
+           
+			cliente.setIdCliente(Console.readString("ID: "));
 
-			System.out.println("Cpf: ");
-			cliente.setCpf(Console.readString());
+			cliente.setCpf(Console.readString("Cpf: "));
 
             if (ClienteController.cadastrarCli(cliente)) {
-
-				System.out.println("Nome: ");
-				cliente.setNome(Console.readString());
-				System.out.println("Data de cadastro: ");
-				cliente.setDataCad(Console.readString());
-				System.out.println("Cidade: ");
-				cliente.setCidade(Console.readString());
-                System.out.println("Estado: ");
-				cliente.setEstado(Console.readString());
+				cliente.setNome(Console.readString("Nome: "));
+				cliente.setDataCad(Console.readString("Data de cadastro: "));
+				cliente.setCidade(Console.readString("Cidade: "));
+				cliente.setEstado(Console.readString("Estado: "));
 				System.out.println("\nCLIENTE cadastrado com sucesso");
 
 			} else {

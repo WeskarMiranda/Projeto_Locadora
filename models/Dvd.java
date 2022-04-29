@@ -10,7 +10,7 @@ public class Dvd {
 	private String duracao;
     private int estoque;
 
-    public String getIdDvd() {
+    public String   getIdDvd() {
         return idDvd;
     }
     public int getEstoque() {
