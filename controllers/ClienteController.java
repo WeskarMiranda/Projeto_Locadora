@@ -19,6 +19,10 @@ public class ClienteController {
 		return false;
 	}
 	
+	public static void atualizar(Cliente cliente) {
+		int index = clientes.indexOf(cliente);
+		if(index > 0) clientes.add(index, cliente);
+	}
 	
 	public static Cliente buscarCpf(String cpf) {
 		for(Cliente cliCad : clientes) {
@@ -37,6 +41,12 @@ public class ClienteController {
 		}
 		return null;
 	}
-	
-	
+
+	public static void excluirCliente(Cliente c) {
+		clientes.remove(c);
+	}
+
+	public static boolean exists(Cliente c){
+		return clientes.contains(c);
+	}
 }

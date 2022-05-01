@@ -19,4 +19,15 @@ public class ErroTipo {
 		} while (!vali);
 		return valor;
 	}
+
+	public static void erroBusca(String tipo, String tipoDado, String dado) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\nNão foi possivel encontrar ");
+		sb.append(tipo);
+		sb.append(" com ");
+		sb.append(tipoDado);
+		sb.append(dado);
+		sb.append("\nObrigado por utilizar o sistema.");
+		System.out.println(sb.toString());
+	}
 }

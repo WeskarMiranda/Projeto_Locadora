@@ -10,20 +10,23 @@ public class Main {
 	public static int Menu() {
 		int opcao;
 		
-		System.out.println("\n **** MENU - Locadora de Videos **** \n");
+		System.out.println("\n **** MENU - LOCADORA DE VIDEOS **** \n");
 		System.out.println("0 - Sair");
 		System.out.println("1 - Cadastrar cliente");
 		System.out.println("2 - Listar clientes");
-		System.out.println("3 - Cadastrar fornecedor");
-		System.out.println("4 - Listar fornecedores");
-		System.out.println("5 - Cadastrar DVD ");
-		System.out.println("6 - Listar DVD");
-		System.out.println("7 - Cadastrar funcionario");
-		System.out.println("8 - Listar funcionarios");
-		System.out.println("9 - Cadastrar locacao");
-		System.out.println("10 - Listar locacoes");
-		System.out.println("11 - Verificar quais DVDs estao fora de estoque");
-		System.out.println("12 - Verificar clientes com multas\n");
+		System.out.println("3 - Editar cliente");
+		System.out.println("4 - Excluir cliente");
+		System.out.println("5 - Cadastrar fornecedor");
+		System.out.println("6 - Listar fornecedores");
+		System.out.println("7 - Cadastrar DVD ");
+		System.out.println("8 - Listar DVD");
+		System.out.println("9 - Cadastrar funcionario");
+		System.out.println("10 - Listar funcionarios");
+		System.out.println("11 - Cadastrar locacao");
+		System.out.println("12 - Listar locacoes");
+		System.out.println("13 - Verificar quais DVDs estao fora de estoque");
+		System.out.println("14 - Verificar clientes com multas\n");
+		
 		opcao = ErroTipo.lerNum("Digite a opcao a ser executada: ");
 		return opcao;
 	}
@@ -41,27 +44,32 @@ public class Main {
 			case 1: CadastrarCliente.renderizar(); break;
 			
 			case 2: ListarCliente.renderizar(); break;
-			
-			case 3: CadastrarFornecedor.renderizar(); break;
+
+			case 3: EditarCliente.renderizar(); break;
+
+			case 4: RemoverCliente.renderizar(); break;
+
+			case 5: CadastrarFornecedor.renderizar(); break;
 				
-			case 4: ListarFornecedor.renderizar(); break;
+			case 6: ListarFornecedor.renderizar(); break;
 				
-			case 5: CadastrarDvd.renderizar(); break;
+			case 7: CadastrarDvd.renderizar(); break;
 				
-			case 6: ListarDvd.renderizar(); break;
+			case 8: ListarDvd.renderizar(); break;
 			
-			case 7: CadastrarFuncionario.renderizar(); break;
+			case 9: CadastrarFuncionario.renderizar(); break;
 			
-			case 8: ListarFuncionario.renderizar(); break;
+			case 10: ListarFuncionario.renderizar(); break;
 			
-			case 9: CadastrarLocacao.renderizar(); break;
+			case 11: CadastrarLocacao.renderizar(); break;
 			
-			case 10: ListarLocacao listarLocacao = new ListarLocacao();
+			case 12: ListarLocacao listarLocacao = new ListarLocacao();
 			listarLocacao.renderizar(); break;
 			
-			case 11: EstoqueDvd.renderizar(); break;
+			case 13: EstoqueDvd.renderizar(); break;
 			
-			case 12: Multas.renderizar(); break;
+			case 14: Multas.renderizar(); break;
+			
 			
 				
 			default:
