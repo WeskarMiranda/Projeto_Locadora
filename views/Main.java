@@ -25,7 +25,13 @@ public class Main {
 		System.out.println("11 - Cadastrar locacao");
 		System.out.println("12 - Listar locacoes");
 		System.out.println("13 - Verificar quais DVDs estao fora de estoque");
-		System.out.println("14 - Verificar clientes com multas\n");
+		System.out.println("14 - Verificar clientes com multas");
+		System.out.println("15 - Anotar uma Sugestao");
+		System.out.println("16 - Listar sugestoes");
+		System.out.println("17 - Avaliacao dos clientes");
+		System.out.println("18 - listar avaliaçoes");
+
+
 		
 		opcao = ErroTipo.lerNum("Digite a opcao a ser executada: ");
 		return opcao;
@@ -69,8 +75,16 @@ public class Main {
 			case 13: EstoqueDvd.renderizar(); break;
 			
 			case 14: Multas.renderizar(); break;
+
+			case 15: CadastrarSugestao.renderizar(); break;
 			
-			
+			case 16: ListarSugestao listarSugestao = new ListarSugestao();
+			listarSugestao.renderizar(); break;
+
+			case 17: CadastrarAvalicao.renderizar();; break;
+
+			case 18: ListarAvaliacao listarAvaliacao = new ListarAvaliacao();
+			listarAvaliacao.renderizar(); break;
 				
 			default:
 				System.out.println("Opcao invalida...");
