@@ -2,18 +2,22 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.interfaces.IAvaliacaoController;
 import models.Avaliacao;
 
-public class AvaliacaoController {
+public class AvaliacaoController implements IAvaliacaoController {
 
     private static ArrayList<Avaliacao> avaliacaoLista = new ArrayList<Avaliacao>();
      
-    public static void cadastrar(Avaliacao avaliacao){
+    @Override
+    public void cadastrar(Avaliacao avaliacao){
         avaliacaoLista.add(avaliacao);
     }
-        public  ArrayList<Avaliacao> listar() {
+
+    @Override
+    public  ArrayList<Avaliacao> listar() {
             return avaliacaoLista;
             
-        }
+    }
     
 }

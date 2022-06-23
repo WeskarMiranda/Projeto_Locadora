@@ -2,35 +2,41 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.interfaces.ISugestaoController;
 import models.Sugestao;
 
-public class SugestaoController {
+public class SugestaoController implements ISugestaoController {
 
     private static ArrayList<Sugestao> sugestaoLista = new ArrayList<Sugestao>();
      
-    public static void cadastrar(Sugestao sugestao){
+    @Override
+    public void cadastrar(Sugestao sugestao){
         sugestaoLista.add(sugestao);
     }
-        public  ArrayList<Sugestao> listar() {
-            return sugestaoLista;
-            
-        }
-    
-        public static boolean CadastrarSugestao(Sugestao sugestao){
-            for(Sugestao sugestaoCad : sugestaoLista) {
-                if(sugestaoCad.getFilme().equals(sugestao.getFilme()))  {
-                return true;
-            }
-        }
-            return false;
-        }
 
-        public static Sugestao buscarNome(String Filme) {
-		for(Sugestao sugestaoCad : sugestaoLista) {
-			if(sugestaoCad.getFilme().equals(Filme)) {
-                return sugestaoCad;
-			}
+    @Override
+    public ArrayList<Sugestao> listar() {
+        return sugestaoLista;
+            
+    }
+    
+    @Override
+    public boolean CadastrarSugestao(Sugestao sugestao){
+        for(Sugestao sugestaoCad : sugestaoLista) {
+            if(sugestaoCad.getFilme().equals(sugestao.getFilme()))  {
+            return true;
+        }
+    }
+        return false;
+    }
+
+    @Override
+    public Sugestao buscarNome(String Filme) {
+	for(Sugestao sugestaoCad : sugestaoLista) {
+		if(sugestaoCad.getFilme().equals(Filme)) {
+            return sugestaoCad;
 		}
-		return null;
+	}
+	return null;
 	}
 }

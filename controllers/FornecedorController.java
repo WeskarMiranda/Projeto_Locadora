@@ -2,18 +2,20 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.interfaces.IFornecedorController;
 import models.Fornecedor;
 
-public class FornecedorController {
+public class FornecedorController implements IFornecedorController {
 
     private static ArrayList<Fornecedor> fornecedores = new ArrayList<Fornecedor>();
 	
-	
-	public static ArrayList<Fornecedor> Listar(){
+	@Override
+	public ArrayList<Fornecedor> Listar(){
 		return fornecedores;
 	}
 	
-	public static boolean cadastrarForn(Fornecedor fornecedor){
+	@Override
+	public boolean cadastrarForn(Fornecedor fornecedor){
 		if( (buscarCnpj(fornecedor.getCnpj()) == null) && buscarId(fornecedor.getIdFornecedor()) == null)  {
 			fornecedores.add(fornecedor);
 			return true;
@@ -21,8 +23,8 @@ public class FornecedorController {
 		return false;
 	}
 	
-	
-	public static Fornecedor buscarCnpj(String cnpj) {
+	@Override
+	public Fornecedor buscarCnpj(String cnpj) {
 		for(Fornecedor fornecedorCad : fornecedores) {
 			if(fornecedorCad.getCnpj().equals(cnpj)) {
 				return fornecedorCad;
@@ -31,7 +33,8 @@ public class FornecedorController {
 		return null;
 	}
 
-    public static Fornecedor buscarId(String idFornecedor) {
+	@Override
+    public Fornecedor buscarId(String idFornecedor) {
 		for(Fornecedor fornecedorCad : fornecedores) {
 			if(fornecedorCad.getIdFornecedor().equals(idFornecedor)) {
 				return fornecedorCad;
@@ -39,6 +42,5 @@ public class FornecedorController {
 		}
 		return null;
 	}
-	
 	
 }

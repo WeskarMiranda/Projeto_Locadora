@@ -2,21 +2,21 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.interfaces.ILocacaoController;
 import models.Locacao;
 
-public class LocacaoController {
+public class LocacaoController implements ILocacaoController {
     
     private static ArrayList<Locacao> locacaoLista = new ArrayList<Locacao>();
 
+    @Override
     public void cadastrar(Locacao locacao) {
         locacaoLista.add(locacao);
     }
 
-    public static ArrayList<Locacao> listar() {
+    @Override
+    public ArrayList<Locacao> listar() {
         return locacaoLista;
     }
-    
-    
-
 
 }

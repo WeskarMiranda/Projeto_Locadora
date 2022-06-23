@@ -3,19 +3,20 @@ package views;
 import controllers.DvdController;
 import models.Dvd;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarDvd {
+public class CadastrarDvd implements IViews {
     
-    private static Dvd dvd;
-
-    public static void renderizar() {
+	@Override
+    public void renderizar() {
 		
 		System.out.println("\n **** CADASTRO DE DVD **** \n");
-            dvd = new Dvd();
+            Dvd dvd = new Dvd();
+			DvdController dvdController = new DvdController();
 
 			dvd.setIdDvd(Console.readString("ID: "));
 
-            if (DvdController.cadastrarDvd(dvd)) {
+            if (dvdController.cadastrarDvd(dvd)) {
 
 				dvd.setNome(Console.readString("Nome: "));
 				dvd.setAno(Console.readString("Ano de lançamento: "));
@@ -30,4 +31,7 @@ public class CadastrarDvd {
 			}
 		
 		}
+
+	@Override
+	public void printClient() {}
 	}

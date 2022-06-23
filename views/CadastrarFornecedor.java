@@ -3,21 +3,22 @@ package views;
 import controllers.FornecedorController;
 import models.Fornecedor;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarFornecedor {
+public class CadastrarFornecedor implements IViews {
     
-    private static Fornecedor fornecedor;
-
-    public static void renderizar() {
+	@Override
+    public void renderizar() {
 		
 		System.out.println("\n **** CADASTRO DE FORNECEDOR **** \n");
-            fornecedor = new Fornecedor();
+            Fornecedor fornecedor = new Fornecedor();
+			FornecedorController fornecedorController = new FornecedorController();
 
 			fornecedor.setIdFornecedor(Console.readString("ID: "));
 
 			fornecedor.setCnpj(Console.readString("CNPJ: "));
 
-            if (FornecedorController.cadastrarForn(fornecedor)) {
+            if (fornecedorController.cadastrarForn(fornecedor)) {
 
 				fornecedor.setNome(Console.readString("Nome: "));
 				fornecedor.setTelefone(Console.readString("Telefone: "));
@@ -31,5 +32,8 @@ public class CadastrarFornecedor {
 			}
 		
 		}
+		
+	@Override
+	public void printClient() {}
 	}
 

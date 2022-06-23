@@ -3,22 +3,22 @@ package views;
 import controllers.FuncionarioController;
 import models.Funcionario;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarFuncionario {
+public class CadastrarFuncionario implements IViews {
 
-    private static Funcionario funcionario;
-
-
-	public static void renderizar() {
+	@Override
+	public void renderizar() {
 		
 		System.out.println("\n **** CADASTRO DE FUNCIONARIO **** \n");
-		    funcionario = new Funcionario();
+		    Funcionario funcionario = new Funcionario();
+			FuncionarioController funcionarioController = new FuncionarioController();
 
 			funcionario.setIdFuncionario(Console.readString("ID: "));
 
 			funcionario.setCpf(Console.readString("CPF: "));
 
-            if (FuncionarioController.cadastrarFunc(funcionario)) {
+            if (funcionarioController.cadastrarFunc(funcionario)) {
 
 				funcionario.setNome(Console.readString("Nome: "));
 				funcionario.setCargo(Console.readString("Cargo: "));
@@ -32,5 +32,8 @@ public class CadastrarFuncionario {
 			}
 		
 		}
+
+	@Override
+	public void printClient() {}	
 	}
 

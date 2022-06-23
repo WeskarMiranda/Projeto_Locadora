@@ -3,15 +3,16 @@ package views;
 import controllers.AvaliacaoController;
 import models.Avaliacao;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarAvalicao {
+public class CadastrarAvalicao implements IViews {
 
-    private static Avaliacao avaliacao;
-
-	public static void renderizar() {
+    @Override
+	public  void renderizar() {
 		
 		System.out.println("\n **** AVALIACAO DE FILMES **** \n");
-		    avaliacao = new Avaliacao();
+		   Avaliacao avaliacao = new Avaliacao();
+		   AvaliacaoController avaliacaoController = new AvaliacaoController();
 
            
       
@@ -30,12 +31,15 @@ public class CadastrarAvalicao {
                     avaliacao.setComentario("Sem comentarios");
                 }
 
-                AvaliacaoController.cadastrar(avaliacao);
+                avaliacaoController.cadastrar(avaliacao);
                 System.out.println("\nAvaliacao cadastrada com sucesso");
 			} else {
 				System.out.println("\nNota Invalida!");
 			}
     
 	}
+
+	@Override
+	public void printClient() {}
 }
 

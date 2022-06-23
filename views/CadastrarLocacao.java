@@ -1,8 +1,5 @@
 package views;
 
-
-
-
 import controllers.ClienteController;
 import controllers.DvdController;
 import controllers.LocacaoController;
@@ -10,9 +7,12 @@ import models.Locacao;
 import models.Cliente;
 import models.Dvd;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarLocacao {
-    public static void renderizar()  {
+public class CadastrarLocacao implements IViews {
+
+    @Override
+    public void renderizar()  {
         Locacao locacao = new Locacao();
         LocacaoController locacaoController = new LocacaoController();
     
@@ -21,14 +21,18 @@ public class CadastrarLocacao {
             locacao.setIdlocacao(Idlocacao);      
 
          // Cliente
+         ClienteController clienteController = new ClienteController();
+
          String cpfCliente = Console.readString("Digite o CPF do cliente: ");
-         Cliente cliente = ClienteController.buscarCpf(cpfCliente);
+         Cliente cliente = clienteController.buscarCpf(cpfCliente);
          if (cliente != null) {
              locacao.setCliente(cliente);
  
              // DVD
+             DvdController dvdController = new DvdController();
+
              String idDvd = Console.readString("Digite o ID do DVD: ");
-             Dvd dvd = DvdController.buscarId(idDvd);
+             Dvd dvd = dvdController.buscarId(idDvd);
              if (dvd != null) {
 
                  if(dvd.getEstoque() !=  0){
@@ -51,4 +55,7 @@ public class CadastrarLocacao {
              System.out.println("Cliente não encontrado!");
          }
 }
+
+@Override
+public void printClient() {}
 }

@@ -2,18 +2,20 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.interfaces.IFuncionarioController;
 import models.Funcionario;
 
-public class FuncionarioController {
+public class FuncionarioController implements IFuncionarioController {
     
     private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	
-	
-	public static ArrayList<Funcionario> Listar(){
+	@Override
+	public ArrayList<Funcionario> Listar(){
 		return funcionarios;
 	}
 	
-	public static boolean cadastrarFunc(Funcionario funcionario){
+	@Override
+	public boolean cadastrarFunc(Funcionario funcionario){
 		if( (buscarCpf(funcionario.getCpf()) == null) && buscarIdFuncionario(funcionario.getIdFuncionario()) == null)  {
 			funcionarios.add(funcionario);
 			return true;
@@ -21,8 +23,8 @@ public class FuncionarioController {
 		return false;
 	}
 	
-	
-	public static Funcionario buscarCpf(String cpf) {
+	@Override
+	public Funcionario buscarCpf(String cpf) {
 		for(Funcionario funcionarioCad : funcionarios) {
 			if(funcionarioCad.getCpf().equals(cpf)) {
 				return funcionarioCad;
@@ -31,7 +33,8 @@ public class FuncionarioController {
 		return null;
 	}
 
-    public static Funcionario buscarIdFuncionario(String idFuncionario) {
+	@Override
+    public Funcionario buscarIdFuncionario(String idFuncionario) {
 		for(Funcionario funcionarioCad : funcionarios) {
 			if(funcionarioCad.getIdFuncionario().equals(idFuncionario)) {
 				return funcionarioCad;
@@ -39,6 +42,5 @@ public class FuncionarioController {
 		}
 		return null;
 	}
-	
 	
 }

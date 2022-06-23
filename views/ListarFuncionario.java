@@ -2,14 +2,19 @@ package views;
 
 import controllers.FuncionarioController;
 import models.Funcionario;
+import views.interfaces.IViews;
 
-public class ListarFuncionario {
+public class ListarFuncionario implements IViews {
     
-    public static void renderizar() {
+	@Override
+    public void renderizar() {
+		FuncionarioController funcionarioController = new FuncionarioController();
 		System.out.println("\n **** LISTAGEM DE FUNCIONARIOS **** \n");
-		for (Funcionario funcionarioCad : FuncionarioController.Listar()) {
+		for (Funcionario funcionarioCad : funcionarioController.Listar()) {
 			System.out.println(funcionarioCad);
 		}
 	}
 	
+	@Override
+	public void printClient() {}
 }

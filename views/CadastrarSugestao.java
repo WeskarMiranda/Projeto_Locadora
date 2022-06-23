@@ -3,18 +3,19 @@ package views;
 import controllers.SugestaoController;
 import models.Sugestao;
 import utils.Console;
+import views.interfaces.IViews;
 
-public class CadastrarSugestao {
+public class CadastrarSugestao implements IViews {
 
-    private static Sugestao sugestao;
-
-    public static void renderizar() {
+    @Override
+    public void renderizar() {
         
-    sugestao = new Sugestao();
+    Sugestao sugestao = new Sugestao();
+    SugestaoController sugestaoController = new SugestaoController();
 
     sugestao.setFilme(Console.readString("Filme: "));
 
-    if (SugestaoController.CadastrarSugestao(sugestao)) {
+    if (sugestaoController.CadastrarSugestao(sugestao)) {
 
         sugestao.setVezes(sugestao.getVezes());
 
@@ -29,10 +30,13 @@ public class CadastrarSugestao {
   
     }
     
-    SugestaoController.cadastrar(sugestao);
+    sugestaoController.cadastrar(sugestao);
     
     System.out.println("Obrigado pela Sugestao!!");
 
 
 }
+
+@Override
+public void printClient() {}
 }

@@ -45,43 +45,58 @@ public class Main {
 			op = Menu();
 			switch (op) 
 			{
-			case 0: System.out.println("Programa encerrado");break;
+			case 0: System.out.println("Programa encerrado"); break;
 			
-			case 1: CadastrarCliente.renderizar(); break;
+			case 1: CadastrarCliente cadastrarCliente = new CadastrarCliente();
+			cadastrarCliente.renderizar(); break;
 			
-			case 2: ListarCliente.renderizar(); break;
+			case 2: ListarCliente listarCliente = new ListarCliente();
+			listarCliente.renderizar(); break;
 
-			case 3: EditarCliente.renderizar(); break;
+			case 3: EditarCliente editarCliente = new EditarCliente();
+			editarCliente.renderizar(); break;
 
-			case 4: RemoverCliente.renderizar(); break;
+			case 4: RemoverCliente removerCliente = new RemoverCliente();
+			removerCliente.renderizar(); break;
 
-			case 5: CadastrarFornecedor.renderizar(); break;
+			case 5: CadastrarFornecedor cadastrarFornecedor = new CadastrarFornecedor();
+			cadastrarFornecedor.renderizar(); break;
 				
-			case 6: ListarFornecedor.renderizar(); break;
+			case 6: ListarFornecedor listarFornecedor = new ListarFornecedor();
+			listarFornecedor.renderizar(); break;
 				
-			case 7: CadastrarDvd.renderizar(); break;
+			case 7: CadastrarDvd cadastrarDvd = new CadastrarDvd();
+			cadastrarDvd.renderizar(); break;
 				
-			case 8: ListarDvd.renderizar(); break;
+			case 8: ListarDvd listarDvd = new ListarDvd();
+			listarDvd.renderizar(); break;
 			
-			case 9: CadastrarFuncionario.renderizar(); break;
+			case 9: CadastrarFuncionario cadastrarFuncionario = new CadastrarFuncionario();
+			cadastrarFuncionario.renderizar(); break;
 			
-			case 10: ListarFuncionario.renderizar(); break;
+			case 10: ListarFuncionario listarFuncionario = new ListarFuncionario();
+			listarFuncionario.renderizar(); break;
 			
-			case 11: CadastrarLocacao.renderizar(); break;
+			case 11: CadastrarLocacao cadastrarLocacao = new CadastrarLocacao();
+			cadastrarLocacao.renderizar(); break;
 			
 			case 12: ListarLocacao listarLocacao = new ListarLocacao();
 			listarLocacao.renderizar(); break;
 			
-			case 13: EstoqueDvd.renderizar(); break;
+			case 13: EstoqueDvd estoqueDvd = new EstoqueDvd();
+			estoqueDvd.renderizar(); break;
 			
-			case 14: Multas.renderizar(); break;
+			case 14: Multas multas = new Multas();
+			multas.renderizar(); break;
 
-			case 15: CadastrarSugestao.renderizar(); break;
+			case 15: CadastrarSugestao cadastrarSugestao = new CadastrarSugestao();
+			cadastrarSugestao.renderizar(); break;
 			
 			case 16: ListarSugestao listarSugestao = new ListarSugestao();
 			listarSugestao.renderizar(); break;
 
-			case 17: CadastrarAvalicao.renderizar();; break;
+			case 17: CadastrarAvalicao cadastrarAvalicao = new CadastrarAvalicao();
+			cadastrarAvalicao.renderizar();; break;
 
 			case 18: ListarAvaliacao listarAvaliacao = new ListarAvaliacao();
 			listarAvaliacao.renderizar(); break;
